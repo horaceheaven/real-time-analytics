@@ -1,0 +1,23 @@
+{
+  "name": "real-time-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "Realtime analytics dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horaceheaven/real-time-analytics.git"
+  },
+  "author": "Horace Heaven",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horaceheaven/real-time-analytics/issues"
+  },
+  "homepage": "https://github.com/horaceheaven/real-time-analytics#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
+  }
+}
