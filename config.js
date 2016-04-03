@@ -1,6 +1,5 @@
 var config = {
-	host: 'localhost',
-	port: 5000,
+	host: 'localhost:5000',
 	dashboardEndpoint: '/dashboard'
 };
 
