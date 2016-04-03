@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Real Time Analytics</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+		<style media="screen">
+			body {
+				background-color: #F2F2F0;
+			}
+
+			.navbar {
+				background-color: #373737;
+				padding: 5px;
+				border-radius: 0px;
+			}
+
+			.navbar a {
+				color: #8C8C8C;
+				font-size: 1.5em;
+			}
+
+			.brand {
+				color: #D0D0D0;
+				font-size: 0.8em;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+		  <div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Real Time Analytics <span class="brand"> | horaceheaven.com</span></a>
+				</div>
+		  </div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Open up the analytis dashboard in a new tab/window</h3>
+					<h4 class="header"><a href="/dashboard">Analytics Dashboard</a></h4>
+					<h3>Use the links below to test the real time analytics dashboard</h3>
+					<h4 class="header"><a href="/">Homepage</a></h4>
+					<h4 class="header"><a href="/about">About Us</a></h4>
+					<h4 class="header"><a href="/contact">Contact Us</a></h4>
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			var socket = io();
+
+			var visitorData = {
+				referringSite: document.referrer,
+				page: location.pathname
+			};
+			socket.emit('visitor-data', visitorData)
+		</script>
+	</body>
+</html>

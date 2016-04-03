@@ -21,9 +21,15 @@ app.get('/dashboard', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-    socket.on('disconnect', function() {
+  socket.on('visitor-data', function(data) {
+    console.log('user started session');
+    visitorsData[socket.id] = data;
+  });
 
-    });
+  socket.on('disconnect', function() {
+    console.log('user session ended');
+    delete visitorsData[socket.id];
+  });
 });
 
 http.listen(app.get('port'), function() {
